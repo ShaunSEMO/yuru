@@ -1,0 +1,37 @@
+----------------------
+|Functions idea board|
+----------------------
+-Access levels
+-Modulor features and updates
+-Singular Company (Website)
+-Mobile first
+-Activity tracking
+-Site metrics tracking
+
+-------------------
+|Design idea board|
+-------------------
+-Dark mode/light mode switch
+-Mobile first
+-Functionality first before aesthetics, but not to ignore consistency in aesthetics
+-Minimal in design, beefy in functionality
+
+-----------
+Laravel/Vue
+-----------
+
+----------------
+|Execution Plan|
+----------------
+-Module planning
+-Wireframe/User journey design/functionality mapping
+-Logo design/Colour palette design
+-Design planning/Aesthetics "gathering"/Palette estiblishing
+-Design complettion
+-Development planning
+	-Architecture layout
+-Development
+-Documentation
+-Testing
+-Deployment
+

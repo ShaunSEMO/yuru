@@ -1,9 +1,0 @@
-----------------------
-|Functions idea board|
-----------------------
--Access levels
--Modulor features and updates
--Singular Company (Website)
--Mobile first
--Activity tracking
--Site metrics tracking
