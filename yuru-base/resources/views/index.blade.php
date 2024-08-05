@@ -5,8 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Yuru</title>
+        @vite('resources/css/app.css')
     </head>
-    <body>
+    <body class="bg-blue-500">
         <div id="app"></div>
     </body>
     @vite('resources/js/app.js')
