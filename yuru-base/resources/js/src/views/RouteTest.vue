@@ -2,5 +2,5 @@
 </script>
 
 <template>
-    <h1>New Vue App</h1>
+    <h3>Route exists</h3>
 </template>

@@ -1,9 +1,7 @@
 <script setup>
-import ExampleComponent from './components/ExampleComponent.vue';
-import TestComponent from './components/TestComponent.vue'
+    import HomeView from '@/views/HomeView.vue';
 </script>
 
 <template>
-    <ExampleComponent />
-    <TestComponent />
+    <HomeView />
 </template>
