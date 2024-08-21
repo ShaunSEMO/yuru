@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/app/{any}', function () {
     return view('index');
-});
+})->where('any', '.*');
 
 Route::get('/not_found', function () {
     return view('notFound');

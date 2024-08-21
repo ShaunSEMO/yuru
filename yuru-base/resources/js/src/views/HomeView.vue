@@ -8,7 +8,7 @@
     <ExampleComponent />
     <TestComponent />
     <RouterLink 
-    to='/'
+    to='/home'
     class="text-white bg-green-700 hover:bg-green-900 rounded-md px-3 py-2 mt-4">
         Home
     </RouterLink>

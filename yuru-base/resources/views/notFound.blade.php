@@ -7,7 +7,7 @@
         <title>Not Found</title>
         @vite('resources/css/app.css')
     </head>
-    <body class="bg-yellow-300">
+    <body class="bg-amber-400">
         <div id="app_notfound"></div>
         <h2>Hello World</h2>
     </body>

@@ -1,6 +1,6 @@
 import { createApp } from 'vue';
 import NotFound from './src/NotFound.vue';
-import router from './src/router';
+import router from './src/router/indexe';
 
 const notFound = createApp(NotFound);
 

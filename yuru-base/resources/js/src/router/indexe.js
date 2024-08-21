@@ -4,10 +4,10 @@ import NotFoundView from '@/views/NotFoundView.vue';
 import RouteTest from '../views/RouteTest.vue';
 
 const router = createRouter({
-    history: createWebHistory('/app'),
+    history: createWebHistory(import.meta.env.BASE_URL),
     routes: [
         {
-            path: '/home',
+            path: '/',
             name: 'home',
             component: HomeView
         },
