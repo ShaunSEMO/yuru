@@ -1,12 +1,15 @@
 <script setup>
     import ExampleComponent from '@/components/ExampleComponent.vue';
-    import TestComponent from '@/components/TestComponent.vue';
+    // import BlogPostComponent from '@/components/BlogPostComponent.vue';
     import { RouterLink } from 'vue-router';
 </script>
 
 <template>
     <ExampleComponent />
-    <TestComponent />
+    <br>
+    <!-- <BlogPostComponent/> -->
+    <br>
+    <br>
     <RouterLink 
     to='/home'
     class="text-white bg-green-700 hover:bg-green-900 rounded-md px-3 py-2 mt-4">
