@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Models\BlogPost;
+use App\Models\BlogPost;
 
 class BlogController extends Controller
 {
@@ -12,6 +12,12 @@ class BlogController extends Controller
     }
 
     public function post(Request $request) {
+
+        $validated = $request->validate([
+            'title' => 'required',
+            'post_body' => 'required',
+        ]);
+
         $post = BlogPost::create($request->all());
         return response()->json($post, 201); 
     }
@@ -21,7 +27,8 @@ class BlogController extends Controller
     }
 
     public function update(Request $request, $id) {
-        $post = BlogPost::findOrFail($id);
+        $post = BlogPost::find($id);
+        dd($post);
         $item->update($request->all());
         return response()->json($post, 200);
     }
@@ -30,4 +37,4 @@ class BlogController extends Controller
         BlogPost::destroy($id);
         return response()->json(null, 204);
     }
-}
+}   

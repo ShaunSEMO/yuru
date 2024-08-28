@@ -14,13 +14,12 @@ use App\Http\Controllers\BlogController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
-// Route::get('/posts', [BlogController::class, 'index']);
-// Route::post('/posts', [BlogController::class, 'post']);
-// Route::get('/post/{id}', [BlogController::class, 'show']);
-// Route::put('/post/{id}', [BlogController::class, 'update']);
-// Route::delete('/post/{id}', [BlogController::class, 'delete']);
-
+Route::get('/posts', [BlogController::class, 'index']);
+Route::post('/posts', [BlogController::class, 'post']);
+Route::get('/post/{id}', [BlogController::class, 'show']);
+Route::put('/post/{id}', [BlogController::class, 'update']);
+Route::delete('/post/{id}', [BlogController::class, 'delete']);
