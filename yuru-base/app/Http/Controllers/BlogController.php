@@ -28,8 +28,7 @@ class BlogController extends Controller
 
     public function update(Request $request, $id) {
         $post = BlogPost::find($id);
-        dd($post);
-        $item->update($request->all());
+        $post->update($request->all());
         return response()->json($post, 200);
     }
 
