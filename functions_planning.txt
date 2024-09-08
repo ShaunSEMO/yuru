@@ -2,6 +2,7 @@
 	-Basic google analytics intergration
 	-Dashboard sections to be modular based on installed modules
 	-Internal(CMS) stats and external(Website [google analytics]) stats
+	-User Activity Logger
 -Web details management
 	-Basic details. Not major content
 		-Logo, company details, contacts, address and such
