@@ -21,7 +21,8 @@
 </script>
 
 <template>
-    <nav class="bg-green-700 text-white p-4 shadow-lg">
+    <div class="bg-primaryShade-light">
+        <nav class="bg-green-500 text-white p-4 shadow-lg">
         <div class="container mx-auto flex justify-between items-center">
         <!-- Logo -->
         <div class="text-2xl font-bold">
@@ -77,4 +78,5 @@
         </div>
     </nav>
     <BlogPostComponent/>
+    </div>
 </template>

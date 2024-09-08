@@ -3,5 +3,5 @@
 </script>
 
 <template>
-    <RouterView />
+    <RouterView class="bg-baseShade-dark" />
 </template>
