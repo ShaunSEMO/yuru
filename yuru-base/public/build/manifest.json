@@ -1,0 +1,34 @@
+{
+  "_RouteTest-DIBzJYZE.js": {
+    "file": "assets/RouteTest-DIBzJYZE.js",
+    "name": "RouteTest"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-jWKan7JB.css",
+    "src": "resources/css/app_na.css",
+    "isEntry": true
+  },
+  "resources/css/app_na.css": {
+    "file": "assets/app-jWKan7JB.css",
+    "src": "resources/css/app_na.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-DSM2WzAh.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "imports": [
+      "_RouteTest-DIBzJYZE.js"
+    ]
+  },
+  "resources/js/appre.js": {
+    "file": "assets/appre-BWwWi6Ya.js",
+    "name": "appre",
+    "src": "resources/js/appre.js",
+    "isEntry": true,
+    "imports": [
+      "_RouteTest-DIBzJYZE.js"
+    ]
+  }
+}
