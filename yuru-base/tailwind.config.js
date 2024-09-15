@@ -10,11 +10,11 @@ export default {
         },
         primaryShade: {
           light: '#BFC4D4',
-          dark: '#0D101A'
+          dark: '#0F1423'
         },
         secondaryShade: {
           light: '#E6EAF5',
-          dark: '#1A1F2C'
+          dark: '#1B2439'
         },
         standardText: {
           light: '#1A1F2C',

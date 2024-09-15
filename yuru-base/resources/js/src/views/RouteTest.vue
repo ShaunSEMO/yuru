@@ -1,8 +1,10 @@
 <script setup>
     import { RouterLink } from 'vue-router';
+    import PageNavigation from '@/components/PageNavigation.vue';
 </script>
 
 <template>
+    <PageNavigation />
     <h3>Route exists</h3>
     <h1>This is route test</h1>
     <RouterLink 

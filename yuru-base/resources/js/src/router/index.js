@@ -2,9 +2,10 @@ import {createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
 import NotFoundView from '@/views/NotFoundView.vue';
 import RouteTest from '../views/RouteTest.vue';
+import BlogView from '../views/BlogView.vue';
 
 const router = createRouter({
-    history: createWebHistory('/app'),
+    history: createWebHistory('/admin'),
     routes: [
         {
             path: '/home',
@@ -20,6 +21,11 @@ const router = createRouter({
             path: '/:catchall(.*)',
             name: 'notFound',
             component: NotFoundView
+        },
+        {
+            path: '/blog',
+            name: 'blog',
+            component: BlogView
         }
     ]
 });
