@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue';
 import NotFoundView from '@/views/NotFoundView.vue';
 import RouteTest from '../views/RouteTest.vue';
 import BlogView from '../views/BlogView.vue';
+import Categories from '../sections/Categories.vue';
 
 const router = createRouter({
     history: createWebHistory('/admin'),
@@ -25,6 +26,11 @@ const router = createRouter({
         {
             path: '/blog',
             name: 'blog',
+            component: BlogView
+        },
+        {
+            path: '/blog/categories',
+            name: 'categories',
             component: BlogView
         }
     ]

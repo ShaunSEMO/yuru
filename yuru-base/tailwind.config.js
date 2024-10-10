@@ -18,7 +18,7 @@ export default {
         },
         standardText: {
           light: '#1A1F2C',
-          dark: '#93969E'
+          dark: '#AFBDE0'
         },
         signYellow: {
           default: '#F2EA22'
