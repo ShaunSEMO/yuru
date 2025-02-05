@@ -39,12 +39,14 @@
     <div class="container mx-auto p-6">
         
         <button class="bg-signYellow-default min-h-10 min-w-20 rounded-full">
-            <RouterLink to="/home">
+            <RouterLink to="/blog/post">
                 Create  
             </RouterLink>   
         </button>
+
         <br><br>
-        <div class="bg-primaryShade-dark rounded-sm min-h-100 min-w-200">
+        
+        <div class="bg-primaryShade-dark rounded-3xl p-10">
             <h3>Blog posts</h3>
         </div>
     </div>

@@ -32,6 +32,11 @@ const router = createRouter({
             path: '/blog/categories',
             name: 'categories',
             component: BlogView
+        },
+        {
+            path: '/blog/post',
+            name: 'categories',
+            component: BlogView
         }
     ]
 });

@@ -3,33 +3,20 @@
     import BlogPost from '../sections/BlogPost.vue';
     import { RouterLink, useRoute } from 'vue-router';
     import { computed } from 'vue';
-import Categories from '../sections/Categories.vue';
+    import Categories from '../sections/Categories.vue';
+    import BlogCreate from '../sections/BlogCreate.vue';
 
     const route = useRoute();
 
     const isBlogRoute = computed(() => route.path.endsWith('/blog'));
     const isCategoryRoute = computed(() => route.path.endsWith('/categories'));
+    const isBlogCreateRoute = computed(() => route.path.endsWith('/blog/post'));
+    
 </script>
 
 <template>
     <PageNavigation />
     <BlogPost v-if="isBlogRoute"/>
     <Categories v-if="isCategoryRoute"/>
+    <BlogCreate v-if="isBlogCreateRoute"/>
 </template>
-
-<!-- <script setup>
-    import BlogPostComponent from '@/components/BlogPostComponent.vue';
-    import PageNavigation from '@/components/PageNavigation.vue';
-    import Categories from '../sections/Categories.vue';
-    import { computed } from 'vue';yy
-
-    const isBlogRoute = computed(() => route.path.startsWith('/blog'));
-    const isCategoryRoute = computed(() => route.path === '/blog/categories');
-
-</script>
-
-<template>
-    <PageNavigation />
-    <BlogPostComponent v-if="isBlogRoute"/>
-    <Categories v-if="isCategoryRoute"/>    
-</template> -->
