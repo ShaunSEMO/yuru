@@ -1,15 +1,7 @@
 <script setup>
     import { RouterView } from 'vue-router';
     import SideNav from './components/SideNav.vue';
-    import { ClassicEditor, Bold, Essentials, Italic, Mention, Paragraph, Undo } from 'ckeditor5';
-
-    const editor = ClassicEditor;
-    const editorData = '<p>Hello from CKEditor 5 in Vue!</p>';
-    const editorConfig = {
-        plugins: [Bold, Essentials, Italic, Mention, Paragraph, Undo],
-        toolbar: ['undo', 'redo', '|', 'bold', 'italic'],
-        licenseKey: '<YOUR_LICENSE_KEY>',
-    };
+    
 </script>
 
 <template>

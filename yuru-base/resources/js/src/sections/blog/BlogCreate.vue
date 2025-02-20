@@ -1,5 +1,18 @@
 <script setup>
     import { RouterView } from 'vue-router';
+    import { ref, onMounted } from 'vue';
+    import Quill from 'quill';
+    import 'quill/dist/quill.snow.css'; // Make sure you import Quill's CSS
+
+    const editorContainer = ref(null); // Create a ref for the editor
+
+    onMounted(() => {
+        if (editorContainer.value) {
+            new Quill(editorContainer.value, {
+                theme: 'snow' // 'snow' is the default theme, you can use 'bubble' too
+            });
+        }
+    });
 </script>
 
 <template>
@@ -37,12 +50,9 @@
                         </select>
                     </div>
                     <div class="row-span-3">
-                        <!-- <ckeditor
-                            v-model="editorData"
-                            :editor="editor"
-                            :config="editorConfig"
-                        /> -->
-                        CKEditor
+                        <div ref="editorContainer">
+                            
+                        </div>
                     </div>
                 </div>
             </form>
