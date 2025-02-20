@@ -1,10 +1,10 @@
 <script setup>
     import PageNavigation from '@/components/PageNavigation.vue';
-    import BlogPost from '../sections/BlogPost.vue';
+    import BlogPost from '../sections/blog/BlogPost.vue';
     import { RouterLink, useRoute } from 'vue-router';
     import { computed } from 'vue';
-    import Categories from '../sections/Categories.vue';
-    import BlogCreate from '../sections/BlogCreate.vue';
+    import Categories from '../sections/blog/Categories.vue';
+    import BlogCreate from '../sections/blog/BlogCreate.vue';
 
     const route = useRoute();
 

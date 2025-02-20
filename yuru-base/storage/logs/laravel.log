@@ -12025,3 +12025,19 @@ Did you mean this?
 #60 /home/motho/Documents/Work/yuru/yuru-base/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('...')
 #61 {main}
 "} 
+[2025-02-05 16:58:18] local.ERROR: Command "server" is not defined.
+
+Did you mean one of these?
+    make:observer
+    serve {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"server\" is not defined.
+
+Did you mean one of these?
+    make:observer
+    serve at /home/motho/Documents/Work/yuru/yuru-base/vendor/symfony/console/Application.php:737)
+[stacktrace]
+#0 /home/motho/Documents/Work/yuru/yuru-base/vendor/symfony/console/Application.php(266): Symfony\\Component\\Console\\Application->find()
+#1 /home/motho/Documents/Work/yuru/yuru-base/vendor/symfony/console/Application.php(175): Symfony\\Component\\Console\\Application->doRun()
+#2 /home/motho/Documents/Work/yuru/yuru-base/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(201): Symfony\\Component\\Console\\Application->run()
+#3 /home/motho/Documents/Work/yuru/yuru-base/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#4 {main}
+"} 

@@ -1,5 +1,5 @@
 <script setup>
-
+    import { RouterView } from 'vue-router';
 </script>
 
 <template>
@@ -37,11 +37,12 @@
                         </select>
                     </div>
                     <div class="row-span-3">
-                        <ckeditor
+                        <!-- <ckeditor
                             v-model="editorData"
                             :editor="editor"
                             :config="editorConfig"
-                        />
+                        /> -->
+                        CKEditor
                     </div>
                 </div>
             </form>
