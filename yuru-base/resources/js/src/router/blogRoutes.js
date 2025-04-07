@@ -15,5 +15,10 @@ export default [
         path: '/blog/post',
         name: 'BlogCreate',
         component: BlogView,
+    },
+    {
+        path: '/blog/categories/create',
+        name: 'CategoryCreate',
+        component: BlogView,
     }
 ];

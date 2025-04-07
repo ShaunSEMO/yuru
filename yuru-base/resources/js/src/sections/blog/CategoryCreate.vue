@@ -39,20 +39,11 @@
 
         <div class="bg-primaryShade-dark rounded-3xl p-10 pb-20">
             <form>
-                <div class="grid grid-rows-3 grid-flow-col gap-4">
+                <div class="grid grid-rows-3 grid-flow-col gap-4"> 
                     <div class="row-span-3">
-                        <input type="text" name="title" class="border-0 rounded-full bg-secondaryShade-dark min-h-10 focus:ring-0">
-                        <br><br>
-                        <select id="category" name="category" class="block min-h-10 rounded-full bg-secondaryShade-dark">
-                            <option>Technical</option>
-                            <option>Commentary</option>
-                            <option>Tutorial</option>
-                        </select>
-                    </div>
-                    <div class="row-span-3">
-                        <div ref="editorContainer">
-                            
-                        </div>
+                        <h2 class="text-2xl">Name</h2>
+                        <br>
+                        <input type="text" name="title" class="border-0 rounded-full bg-secondaryShade-dark min-h-10 focus:ring-0 p-3">
                     </div>
                 </div>
             </form>
