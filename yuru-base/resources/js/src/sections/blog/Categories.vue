@@ -25,19 +25,22 @@
 <template>
     <div class="container mx-auto p-6">
     
-        <button class="bg-signYellow-default min-h-10 min-w-20 rounded-full">
+        <div class="p-10">
+            <button class="bg-signYellow-default min-h-10 min-w-20 rounded-full">
             <RouterLink to="/blog/categories/create">
                 Create 
             </RouterLink>   
-        </button>
+            </button>
 
-        <br><br>
-        
-        <div class="rounded-3xl p-10 grid grid-flow-col grid-rows-4 gap-6">
-            <Card 
-                v-for="category in state.categories">
-                <h1>Card per category</h1>
-            </Card>
+            <br><br>
+            
+            <div class="rounded-3xl grid grid-cols-3 gap-6">
+                <Card 
+                    v-for="category in state.categories">
+                    <h1>{{ category.category_name }}</h1>
+                </Card>
+            </div>
         </div>
+        
     </div>
 </template>
