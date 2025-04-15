@@ -1,4 +1,24 @@
 <script setup>
+    import { onMounted, reactive } from 'vue';
+    import Card from '../../components/base/Card.vue';
+    import { useToast } from 'vue-toastification';
+    import axios from 'axios';
+
+    const toast = useToast();
+
+    const state = reactive({
+        categories: []
+    });
+
+    onMounted(async () => {
+        try {
+            const response = await axios.get('/categories');
+            state.categories = response.data;     
+        } catch (error) {
+            toast.error(error, 1000);
+            console.log(error)
+        };
+    });
 
 </script>
 
@@ -13,8 +33,11 @@
 
         <br><br>
         
-        <div class="bg-primaryShade-dark rounded-3xl p-10">
-            <h3>Categories</h3>
+        <div class="rounded-3xl p-10 grid grid-flow-col grid-rows-4 gap-6">
+            <Card 
+                v-for="category in state.categories">
+                <h1>Card per category</h1>
+            </Card>
         </div>
     </div>
 </template>
