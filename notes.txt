@@ -35,3 +35,7 @@ Laravel/Vue
 -Testing
 -Deployment
 
+-------------
+|To clean up|
+-------------
+-Make cancel link dynamic
