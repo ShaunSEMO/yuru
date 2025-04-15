@@ -1,6 +1,7 @@
 <script setup>
     import axios from 'axios';
     import { reactive } from 'vue';
+    import { RouterLink } from 'vue-router';
     import { useToast } from 'vue-toastification';
 
     const toast = useToast();
@@ -44,17 +45,10 @@
                 </div>
                 <br>
                 <br>
-                <table class="border-separate border-spacing-x-5">
-                    <tr>
-                        <th>
-                            <button type="submit" class="bg-signYellow-default min-h-9 min-w-20 rounded-full">Save</button>
-                        </th>
-                        <th>
-                            <button class="bg-secondaryShade-dark min-h-9 min-w-20 rounded-full">Cancel</button>
-                        </th>
-                    </tr>
-                </table>
+                <button type="submit" class="bg-signYellow-default min-h-9 min-w-20 rounded-full">Save</button>
             </form>
-        </div>
+            <br>
+            <RouterLink to="/blog/categories" class="bg-secondaryShade-dark min-h-9 min-w-20 rounded-full">Cancel</RouterLink>
+        </div>  
     </div>
 </template>
