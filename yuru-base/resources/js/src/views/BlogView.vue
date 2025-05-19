@@ -6,13 +6,15 @@
     import Categories from '../sections/blog/Categories.vue';
     import BlogCreate from '../sections/blog/BlogCreate.vue';
     import CategoryCreate from '../sections/blog/CategoryCreate.vue';
+    import CategoryEdit from '../sections/blog/CategoryEdit.vue';
 
     const route = useRoute();
 
-    const isBlogRoute = computed(() => route.path.endsWith('/blog'));
-    const isCategoryRoute = computed(() => route.path.endsWith('/categories'));
-    const isBlogCreateRoute = computed(() => route.path.endsWith('/blog/post'));
-    const isBlogCategoryCreate = computed(() => route.path.endsWith('/blog/categories/create'));
+    const isBlogRoute = computed(() => route.name === 'Blog');
+    const isCategoryRoute = computed(() => route.name === 'Categories');
+    const isBlogCreateRoute = computed(() => route.name === 'BlogCreate');
+    const isBlogCategoryCreate = computed(() => route.name === 'CategoryCreate');
+    const isBlogCategoryEdit = computed(() => route.name === 'CategoryEdit');
     
 </script>
 
@@ -22,4 +24,5 @@
     <Categories v-if="isCategoryRoute"/>
     <BlogCreate v-if="isBlogCreateRoute"/>
     <CategoryCreate v-if="isBlogCategoryCreate"/>
+    <CategoryEdit v-if="isBlogCategoryEdit"/>
 </template>

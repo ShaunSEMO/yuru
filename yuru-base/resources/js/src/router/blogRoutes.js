@@ -20,5 +20,10 @@ export default [
         path: '/blog/categories/create',
         name: 'CategoryCreate',
         component: BlogView,
+    },
+    {
+        path: '/blog/category/:id',
+        name: 'CategoryEdit',
+        component: BlogView,
     }
 ];

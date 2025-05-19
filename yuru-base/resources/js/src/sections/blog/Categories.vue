@@ -27,18 +27,21 @@
     
         <div class="p-10">
             <button class="bg-signYellow-default min-h-10 min-w-20 rounded-full">
-            <RouterLink to="/blog/categories/create">
-                Create 
-            </RouterLink>   
+                <RouterLink to="/blog/categories/create">
+                    Create 
+                </RouterLink>   
             </button>
 
             <br><br>
             
             <div class="rounded-3xl grid grid-cols-3 gap-6">
-                <Card 
-                    v-for="category in state.categories">
-                    <h1>{{ category.category_name }}</h1>
-                </Card>
+                <div v-for="category in state.categories">
+                    <RouterLink :to="'/blog/category/' + category.id">
+                        <Card>
+                            <h1>{{ category.category_name }}</h1>
+                        </Card>
+                    </RouterLink>
+                </div>
             </div>
         </div>
         
