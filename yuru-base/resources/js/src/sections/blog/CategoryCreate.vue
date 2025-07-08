@@ -1,7 +1,7 @@
 <script setup>
     import axios from 'axios';
     import { reactive } from 'vue';
-    import { RouterLink } from 'vue-router';
+    import { RouterLink, useRouter } from 'vue-router';
     import { useToast } from 'vue-toastification';
 
     const toast = useToast();
@@ -11,18 +11,25 @@
         name: '',
     })
 
+    const router = useRouter();
+
     const saveRecord = async () => {
         const newCategory = {
             icon: form.icon,
             category_name: form.name,
         }
 
-        axios.post('/categories', newCategory).then(function (response) {
-            toast.success('Category added successfully!', setTimeout=1000);
-            console.log(response)
-        }).catch(function (error) {
-            console.log(error);
-        });
+        axios.post('/categories', newCategory)
+            .then((response) => {
+                toast.success('Category added successfully!');
+
+                setTimeout(() => {
+                    router.push({ name: 'Categories' })  // Use name instead of path
+                }, 1000);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     }
 
 </script>
