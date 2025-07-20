@@ -28,7 +28,7 @@ class BlogController extends Controller
     }
 
     public function updateCategory(Request $request, $id) {
-        $cateogry = BlogCategory::find($id);
+        $category = BlogCategory::find($id);
         $category->update($request->all());
         return response()->json($category, 200);
     }
