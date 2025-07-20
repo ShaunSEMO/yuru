@@ -35,6 +35,7 @@ class BlogController extends Controller
 
     public function deleteCategory($id) {
         $category = BlogCategory::find($id);
+        $category::destroy($id);
         return response()->json(null, 204);
     }
 

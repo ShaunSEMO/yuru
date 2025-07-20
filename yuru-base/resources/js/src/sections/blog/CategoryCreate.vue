@@ -11,7 +11,7 @@
         name: '',
     })
 
-    const router = useRouter();
+    const route = useRouter();
 
     const saveRecord = async () => {
         const newCategory = {
@@ -22,7 +22,7 @@
         axios.post('/categories', newCategory).then((response) => {
                 toast.success('Category added successfully!');
                 setTimeout(() => {
-                    router.push({ name: 'Categories' })  // Use name instead of path
+                    route.push({ name: 'Categories' })  // Use name instead of path
                 }, 1000);
             })
             .catch((error) => {
@@ -53,7 +53,9 @@
                 <button type="submit" class="bg-signYellow-default min-h-9 min-w-20 rounded-full">Save</button>
             </form>
             <br>
-            <RouterLink to="/blog/categories" class="bg-secondaryShade-dark min-h-9 min-w-20 rounded-full">Cancel</RouterLink>
+            <button class="bg-secondaryShade-dark min-h-9 min-w-20 rounded-full">
+                <RouterLink to="/blog/categories">Cancel</RouterLink>
+            </button>
         </div>  
     </div>
 </template>

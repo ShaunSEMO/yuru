@@ -1,11 +1,12 @@
 <script setup>
     import axios from 'axios';
     import { reactive, onMounted } from 'vue';
-    import { RouterLink, useRoute } from 'vue-router';
+    import { RouterLink, useRoute, useRouter } from 'vue-router';
     import { useToast } from 'vue-toastification';
 
     const toast = useToast();
     const route = useRoute();
+    const router = useRouter();
     const id = route.params.id
 
     const form = reactive({
@@ -39,10 +40,20 @@
                 toast.success('Category updated successfully!', setTimeout=1000)
             }
         } catch (error) {
-            toast.error('This is the error ' + error, 1000);
+            toast.error('This is the UPDATE error ' + error, 1000);
             console.log(error);
         }
 
+    }
+
+    const deleteCategory = async () => {
+        try {
+            await axios.delete(`/category/${id}`)
+            router.push({ name: 'Categories' })
+        } catch (error) {
+            toast.error('This is the DELETE error' + error, 1000);
+            console.log(error)
+        }
     }
 
 </script>
@@ -65,10 +76,26 @@
                 </div>
                 <br>
                 <br>
-                <button type="submit" class="bg-signYellow-default min-h-9 min-w-20 rounded-full">Save</button>
+                <table>
+                    <tr>
+                        <th>
+                            <button type="submit" class="bg-signYellow-default min-h-9 min-w-20 rounded-full">Save</button>
+                        </th>
+                        <th>
+                            <button class="bg-secondaryShade-dark min-h-9 min-w-20 rounded-full">
+                                <RouterLink to="/blog/categories">Cancel</RouterLink>
+                            </button>
+                        </th>
+                        <th>
+                            <button @click="deleteCategory" class="bg-red-400 min-h-9 min-w-20 rounded-full">Delete</button>
+                        </th>
+                    </tr>
+                </table>
             </form>
             <br>
-            <RouterLink to="/blog/categories" class="bg-secondaryShade-dark min-h-9 min-w-20 rounded-full">Cancel</RouterLink>
+            <!-- <button class="bg-secondaryShade-dark min-h-9 min-w-20 rounded-full">
+                <RouterLink to="/blog/categories">Cancel</RouterLink>
+            </button> -->
         </div>  
     </div>
 </template>
