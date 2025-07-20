@@ -1,15 +1,31 @@
 <script setup>
     import axios from 'axios';
     import { reactive, onMounted } from 'vue';
-    import { RouterLink } from 'vue-router';
+    import { RouterLink, useRoute } from 'vue-router';
     import { useToast } from 'vue-toastification';
 
     const toast = useToast();
+    const route = useRoute();
+    const id = route.params.id
 
     const form = reactive({
         icon: 'Default',
-        name: '',
+        name: 'Def',
     })
+
+    const isEditing = !!route.params.id
+
+    onMounted(async () => {
+        try {
+            const response = await axios.get(`/category/${id}`);
+            toast.success(''+response.data.category_name)
+            form.name = response.data.category_name
+            form.icon = response.data.icon
+        } catch (error) {
+            toast.error('This is the error ' + error, 1000);
+            console.log(error)
+        };
+    });
 
     const saveRecord = async () => {
         const newCategory = {
@@ -17,29 +33,17 @@
             category_name: form.name,
         }
 
-        axios.post('/categories', newCategory).then(function (response) {
-            toast.success('Category added successfully!', setTimeout=1000);
-            console.log(response)
-        }).catch(function (error) {
-            console.log(error);
-        });
-    }
-
-    // const state = reactive({
-    //     category: []
-    // });
-
-    onMounted(async () => {
         try {
-            const response = await axios.get('/category/${id}');
-            toast.success(''+response.data.category_name)
-            // form.name = response.data.name
-            // state.category = response.data;     
+            if (isEditing) {
+                await axios.put(`/category/${id}`, newCategory)
+                toast.success('Category updated successfully!', setTimeout=1000)
+            }
         } catch (error) {
             toast.error('This is the error ' + error, 1000);
-            console.log(error)
-        };
-    });
+            console.log(error);
+        }
+
+    }
 
 </script>
 

@@ -19,10 +19,8 @@
             category_name: form.name,
         }
 
-        axios.post('/categories', newCategory)
-            .then((response) => {
+        axios.post('/categories', newCategory).then((response) => {
                 toast.success('Category added successfully!');
-
                 setTimeout(() => {
                     router.push({ name: 'Categories' })  // Use name instead of path
                 }, 1000);
