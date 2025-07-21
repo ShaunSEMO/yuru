@@ -14,7 +14,6 @@
         name: 'Def',
     })
 
-    const isEditing = !!route.params.id
 
     onMounted(async () => {
         try {
@@ -35,10 +34,9 @@
         }
 
         try {
-            if (isEditing) {
-                await axios.put(`/category/${id}`, newCategory)
-                toast.success('Category updated successfully!', setTimeout=1000)
-            }
+            await axios.put(`/category/${id}`, newCategory)
+            toast.success('Category updated successfully!', setTimeout=1000)
+
         } catch (error) {
             toast.error('This is the UPDATE error ' + error, 1000);
             console.log(error);
@@ -49,7 +47,7 @@
     const deleteCategory = async () => {
         try {
             await axios.delete(`/category/${id}`)
-            router.push({ name: 'Categories' })
+            await router.push({ name: 'Categories' })
         } catch (error) {
             toast.error('This is the DELETE error' + error, 1000);
             console.log(error)

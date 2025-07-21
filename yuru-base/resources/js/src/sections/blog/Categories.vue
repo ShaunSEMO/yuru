@@ -26,11 +26,9 @@
     <div class="container mx-auto p-6">
     
         <div class="p-10">
-            <button class="bg-signYellow-default min-h-10 min-w-20 rounded-full">
-                <RouterLink to="/blog/categories/create">
+                <RouterLink class="inline-flex items-center justify-center bg-signYellow-default min-h-10 min-w-20 rounded-full" to="/blog/categories/create">
                     Create 
-                </RouterLink>   
-            </button>
+                </RouterLink>
 
             <br><br>
             
