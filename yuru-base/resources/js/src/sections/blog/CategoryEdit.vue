@@ -18,7 +18,6 @@
     onMounted(async () => {
         try {
             const response = await axios.get(`/category/${id}`);
-            toast.success(''+response.data.category_name)
             form.name = response.data.category_name
             form.icon = response.data.icon
         } catch (error) {
@@ -26,6 +25,17 @@
             console.log(error)
         };
     });
+
+    const deleteCategory = async () => {
+        try {
+            await axios.delete(`/category/${id}`)
+            await router.push({ name: 'Categories' })
+            await toast.warning('Category deleted!', 1000)
+        } catch (error) {
+            toast.error('This is the DELETE error' + error, 1000);
+            console.log(error)
+        }
+    }
 
     const saveRecord = async () => {
         const newCategory = {
@@ -42,16 +52,6 @@
             console.log(error);
         }
 
-    }
-
-    const deleteCategory = async () => {
-        try {
-            await axios.delete(`/category/${id}`)
-            await router.push({ name: 'Categories' })
-        } catch (error) {
-            toast.error('This is the DELETE error' + error, 1000);
-            console.log(error)
-        }
     }
 
 </script>
@@ -85,7 +85,7 @@
                             </button>
                         </th>
                         <th>
-                            <button @click="deleteCategory" class="bg-red-400 min-h-9 min-w-20 rounded-full">Delete</button>
+                            <button type="button" @click="deleteCategory" class="bg-red-400 min-h-9 min-w-20 rounded-full">Delete</button>
                         </th>
                     </tr>
                 </table>
