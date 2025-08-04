@@ -77,10 +77,10 @@
                 <table>
                     <tr>
                         <th>
-                            <button type="submit" class="bg-signYellow-default min-h-9 min-w-20 rounded-full">Save</button>
+                            <button  class="bg-signYellow-default min-h-9 min-w-20 rounded-full">Save</button>
                         </th>
                         <th>
-                            <button class="bg-secondaryShade-dark min-h-9 min-w-20 rounded-full">
+                            <button type="button" class="bg-secondaryShade-dark min-h-9 min-w-20 rounded-full">
                                 <RouterLink to="/blog/categories">Cancel</RouterLink>
                             </button>
                         </th>

@@ -46,13 +46,18 @@ class BlogController extends Controller
     }
 
     public function post(Request $request) {
-
-        $validated = $request->validate([
-            'title' => 'required',
-            'post_body' => 'required',
+        $validated = $request->validate([   
+            'header_image' => 'required|string|max:255',
+            'publish_date' => 'required|date_format:Y-m-d H:i:s',
+            'author' => 'required|string|max:255',
+            'title' => 'required|string|max:255',
+            'subheading' => 'required|string',
+            'category_id' => 'required|integer|exists:blog_categories,id',
+            'post_body' => 'required|string',
+            'state' => 'required|string|in:draft,published,archived'
         ]);
 
-        $post = BlogPost::create($request->all());
+        $post = BlogPost::create($validated);
         return response()->json($post, 201); 
     }
 
@@ -62,7 +67,23 @@ class BlogController extends Controller
 
     public function update(Request $request, $id) {
         $post = BlogPost::find($id);
-        $post->update($request->all());
+        
+        if (!$post) {
+            return response()->json(['error' => 'Blog post not found'], 404);
+        }
+
+        $validated = $request->validate([
+            'header_image' => 'sometimes|string|max:255',
+            'publish_date' => 'sometimes|date_format:Y-m-d H:i:s',
+            'author' => 'sometimes|string|max:255',
+            'title' => 'sometimes|string|max:255',
+            'subheading' => 'sometimes|string',
+            'category_id' => 'sometimes|integer|exists:blog_categories,id',
+            'post_body' => 'sometimes|string',
+            'state' => 'sometimes|string|in:draft,published,archived'
+        ]);
+
+        $post->update($validated);
         return response()->json($post, 200);
     }
 

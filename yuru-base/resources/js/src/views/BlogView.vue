@@ -1,6 +1,6 @@
 <script setup>
     import PageNavigation from '@/components/PageNavigation.vue';
-    import BlogPost from '../sections/blog/BlogPost.vue';
+    import BlogPost from '../sections/blog/BlogPosts.vue';
     import { RouterLink, useRoute } from 'vue-router';
     import { computed } from 'vue';
     import Categories from '../sections/blog/Categories.vue';
