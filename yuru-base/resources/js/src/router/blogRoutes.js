@@ -6,14 +6,19 @@ export default [
         name: 'Blog',
         component: BlogView,
     },
-    {
-        path: '/blog/categories',
-        name: 'Categories',
+        {
+        path: '/blog/post',
+        name: 'BlogCreate',
+        component: BlogView,
+    },
+        {
+        path: '/blog/post/:id',
+        name: 'BlogEdit',
         component: BlogView,
     },
     {
-        path: '/blog/post',
-        name: 'BlogCreate',
+        path: '/blog/categories',
+        name: 'Categories',
         component: BlogView,
     },
     {

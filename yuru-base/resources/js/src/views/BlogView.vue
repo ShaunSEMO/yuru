@@ -21,8 +21,8 @@
 <template>
     <PageNavigation />
     <BlogPost v-if="isBlogRoute"/>
-    <Categories v-if="isCategoryRoute"/>
     <BlogCreate v-if="isBlogCreateRoute"/>
+    <Categories v-if="isCategoryRoute"/>
     <CategoryCreate v-if="isBlogCategoryCreate"/>
     <CategoryEdit v-if="isBlogCategoryEdit"/>
 </template>

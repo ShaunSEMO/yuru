@@ -7,7 +7,7 @@
     const toast = useToast();
 
     const state = reactive({
-        posts: [] 
+        posts: []
     });
 
     onMounted(async () => {
@@ -32,9 +32,11 @@
 
             <div class="rounded-3xl grid grid-cols-3 gap-6">
                 <div v-for="post in state.posts">
-                    <Card>
-                        <h3>{{ post.title }}</h3>
-                    </Card>
+                    <RouterLink :to="'/blog/' + post.id">
+                        <Card>
+                            <h3>{{ post.title }}</h3>
+                        </Card>
+                    </RouterLink>
                 </div>
             </div>
         </div>
